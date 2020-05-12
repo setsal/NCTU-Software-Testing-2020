@@ -1,0 +1,5 @@
+digraph "Dominator tree for 'A' function" {
+	label="Dominator tree for 'A' function";
+
+	Node0x191a2d0 [shape=record,label="{%0:\l  ret void\l}"];
+}

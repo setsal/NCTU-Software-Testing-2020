@@ -1,0 +1,19 @@
+digraph "Dominator tree for 'main' function" {
+	label="Dominator tree for 'main' function";
+
+	Node0x191a220 [shape=record,label="{%2:\l  %3 = alloca i32, align 4\l  %4 = alloca i32, align 4\l  %5 = alloca i8**, align 8\l  %6 = alloca i32, align 4\l  %7 = alloca i32, align 4\l  store i32 0, i32* %3, align 4\l  store i32 %0, i32* %4, align 4\l  store i8** %1, i8*** %5, align 8\l  call void @A()\l  store i32 -1, i32* %6, align 4\l  %8 = load i32, i32* %4, align 4\l  %9 = icmp sle i32 %8, 1\l  br i1 %9, label %10, label %12\l}"];
+	Node0x191a220 -> Node0x191a260;
+	Node0x191a220 -> Node0x19190f0;
+	Node0x191a220 -> Node0x1919130;
+	Node0x191a260 [shape=record,label="{%10:\l\l  %11 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([16 x i8], [16\l... x i8]* @.str, i32 0, i32 0))\l  store i32 -1, i32* %3, align 4\l  br label %28\l}"];
+	Node0x19190f0 [shape=record,label="{%28:\l\l  %29 = load i32, i32* %3, align 4\l  ret i32 %29\l}"];
+	Node0x1919130 [shape=record,label="{%12:\l\l  call void @B()\l  store i32 1, i32* %7, align 4\l  br label %13\l}"];
+	Node0x1919130 -> Node0x1919170;
+	Node0x1919170 [shape=record,label="{%13:\l\l  %14 = load i32, i32* %7, align 4\l  %15 = load i32, i32* %4, align 4\l  %16 = icmp slt i32 %14, %15\l  br i1 %16, label %17, label %27\l}"];
+	Node0x1919170 -> Node0x19191b0;
+	Node0x1919170 -> Node0x1919230;
+	Node0x19191b0 [shape=record,label="{%17:\l\l  %18 = load i8**, i8*** %5, align 8\l  %19 = load i32, i32* %7, align 4\l  %20 = sext i32 %19 to i64\l  %21 = getelementptr inbounds i8*, i8** %18, i64 %20\l  %22 = load i8*, i8** %21, align 8\l  %23 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([4 x i8], [4 x\l... i8]* @.str.1, i32 0, i32 0), i8* %22)\l  br label %24\l}"];
+	Node0x19191b0 -> Node0x19191f0;
+	Node0x19191f0 [shape=record,label="{%24:\l\l  %25 = load i32, i32* %7, align 4\l  %26 = add nsw i32 %25, 1\l  store i32 %26, i32* %7, align 4\l  br label %13\l}"];
+	Node0x1919230 [shape=record,label="{%27:\l\l  call void @C()\l  store i32 0, i32* %3, align 4\l  br label %28\l}"];
+}

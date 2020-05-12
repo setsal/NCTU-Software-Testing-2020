@@ -1,0 +1,9 @@
+# Virtualization environments
+dist: bionic
+
+# Language to test
+language: java
+
+# JDK Version
+jdk:
+  - openjdk11
